@@ -110,7 +110,7 @@ function renderPortfolioItems(filter = 'all') {
   $('#portfolio-grid').html(filteredProjects.map((project, i) => (`
     <a href="/project.html?id=${project.id}" class="relative rounded-xl overflow-hidden group transform-gpu hover:-rotate-1 hover:-rotate-y-3 hover:scale-105 duration-500" data-category="${project.category}">
       <!-- Project Image -->
-      <img src="${project.image || "./src/defulte.png"}" alt="${project.title}" class="w-full h-64 object-cover duration-500">
+      <img src="/src/imgs/${project.gallery[0]}" class="w-full h-64 object-cover duration-500">
 
       <!-- Overlay -->
       <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent opacity-0 group-hover:opacity-100 duration-500 flex flex-col justify-end p-4">
@@ -138,7 +138,6 @@ const testimonials = [
         name: "Dr. Sarah Johnson",
         position: "MediCare Dental",
         content: "Abdel transformed our online presence completely. The new website and branding have significantly increased our patient bookings. His understanding of the healthcare industry is exceptional.",
-        avatar: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80",
         rating: 5
     },
     {
@@ -146,7 +145,6 @@ const testimonials = [
         name: "Michael Chen",
         position: "TechCorp Solutions",
         content: "Working with Abdel was a game-changer for our software platform. His design expertise improved our user engagement metrics by 40%. Highly recommended for any business looking to enhance their digital products.",
-        avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80",
         rating: 5
     },
     {
@@ -154,7 +152,6 @@ const testimonials = [
         name: "Dr. Emily Rodriguez",
         position: "Family Dental Care",
         content: "Abdel's patient portal design is intuitive and user-friendly. Our staff and patients love the new system. It has streamlined our appointment process significantly.",
-        avatar: "https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80",
         rating: 4
     }
 ];
@@ -208,4 +205,3 @@ $("#contact-form").on("submit", function(e) {
     // مسح الفورم
     $(this).trigger("reset");
   });
-
